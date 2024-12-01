@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUGAS</title>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #4c93af;
+            text-align: center;
+        }
+
+        font {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            border: 2px solid #4c90af;
+            margin: 20px 0;
+        }
+
+        main {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        b, strong {
+            color: #333;
+        }
+
+        ul {
+            margin-left: 20px;
+            padding: 0;
+        }
+
+        ul li {
+            list-style-type: square;
+            padding: 5px;
+            margin: 5px 0;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        ul li:hover {
+            background-color: #af6d6d46;
+            transform: scale(1.02);
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 8px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <font size="7">FAKULTAS ILMU KOMPUTER</font><br />
+    <font size="5">UNIVERSITAS KUNINGAN</font><br />
+    <font size="3">
+      Alamat : Jl.Pramuka No.67, Purwawinangun, Kec Kuningan, Kabupaten
+      Kuningan, Jawa Barat 455512
+    </font>
+    <hr size="3" />
+    <main>
+       <div>
+        <article>
+            <img src="/20230910030_aditiya/images/Logo FKOM.jpg" alt="FKOM" style="width:100px;" />
+            <img src="/20230910030_aditiya/images/SI.jpg" alt="SI" style="width:100px;" />
+            <img src="/20230910030_aditiya/images/TI.jpg" alt="TI" style="width:100px;" />
+            <img src="/20230910030_aditiya/images/DKV.jpg" alt="DKV" style="width:100px;" />
+            <img src="/20230910030_aditiya/images/MI.jpg" alt="MI" style="width:100px;" />
+            <img src="/20230910030_aditiya/images/fkom-uniku2.png" alt="fkom-uniku2" style="width:100px;" />
+            
+            <div><b> VISI </b></div>
+            Terwujudnya Fakultas Ilmu Komputer Universitas Kuningan sebagai
+            program studi yang handal dan unggul dalam penyelenggaraan Tri Darma
+            Perguruan Tinggi, unggul di bidang rekayasa sistem informasi di
+            Wilayah Jawa Barat pada tahun 2032.
+            
+            <div><b><i> PROFIL LULUSAN & PILIHAN KARIR </i></b></div>
+            System Analyst, Data Analyst, Chief Information Officer (CIO), Software
+            Quality Assurance.
+            
+            <div><b><u> KEGIATAN MBKM </u></b></div>
+            <ul>
+                <li>Magang</li>
+                <li>Studi Independen</li>
+                <li>Bangkit Academy</li>
+                <li>Pertukaran Mahasiswa Merdeka (PMM) Nusantara</li>
+                <li>International Credit Transfer (ICT)</li>
+            </ul>
+
+            <div><b><u><i> PROGRAM UNGGULAN </i></u></b></div>
+            <ul type="square">
+                <li>Pertukaran Mahasiswa ke University Utara Malaysia (UUM)</li>
+                <li>Praktisi/Dosen Kompetensi dari Universitas lain</li>
+            </ul>
+
+            <div><strong> PROGRAM STUDI FAKULTAS ILMU KOMPUTER </strong></div>
+            <ul type="circle">
+                <li>Teknik Informatika</li>
+                <li>Sistem Informasi</li>
+                <li>Desain Komunikasi & Visual</li>
+                <li>Teknik Sipil</li>
+                <li>Management Informatika</li>
+            </ul>
+
+            <div><strong> PRESTASI MAHASISWA </strong></div>
+            <ul type="circle">
+                <li>Juara 1 Lomba Desain Cindramata 2018</li>
+                <li>Juara Favorit Lomba Poster STIKKU 2017</li>
+                <li>Mahasiswa Berprestasi UNIKU 2022</li>
+                <li>Duta Putra Sosial Kuningan 2022</li>
+                <li>Juara Lomba LLDIKTI Konsep Garapan Terbaik Tingkat Jabar-Banten
+                2022
+                </li>
+                <li>PPK Ormawa</li>
+            </ul>
+
+            <!-- Search Bar for Alumni -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Cari Alumni..." oninput="filterList()" />
+            </div>
+
+           <!-- Alumni List -->
+           <div><b><i> PROFIL LULUSAN & PILIHAN KARIR </i></b></div>
+           <ul id="alumniList">
+               <li data-name="Tono Saputra" data-major="Teknik Informatika">
+                   Tono Saputra - Teknik Informatika - Software Engineer
+               </li>
+               <li data-name=" Aditiya" data-major="Sistem Informasi">
+                  Aditiya - Sistem Informasi - Data Analyst
+               </li>
+               <li data-name="Muslimah" data-major="Desain Komunikasi Visual">
+                   Muslimah  - Desain Komunikasi Visual - Desainer Grafis
+               </li>
+               <li data-name="Qorina Putri" data-major="Management Informatika">
+                  Qorina Putri - Management Informatika - IT Support
+               </li>
+           </ul>
+
+           <!-- Sertifikat -->
+           <div>SERTIFIKAT</div>
+           <img src="/20230910030_aditiya/images/BNSP.webp" alt="BNSP" style="width:100px;" />
+
+       </div>
+
+       <!-- JavaScript for filtering the alumni list -->
+       <script>
+           function filterList() {
+               const input = document.getElementById("searchInput").value.toLowerCase();
+               const listItems = document.querySelectorAll("#alumniList li");
+
+               listItems.forEach(item => {
+                   const name = item.getAttribute("data-name").toLowerCase();
+                   const major = item.getAttribute("data-major").toLowerCase();
+
+                   if (name.includes(input) || major.includes(input)) {
+                       item.classList.remove("hidden");
+                   } else {
+                       item.classList.add("hidden");
+                   }
+               });
+           }
+       </script>
+
+    </article>
+    </main>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Mengatur jenis font untuk seluruh halaman */
+            background-color: #f0f8ff; /* Mengatur warna latar belakang */
+            margin: 0;
+            padding: 20px;
+        }
+
+        fieldset {
+            border: 2px solid #4CAF50; /* Mengatur warna border fieldset */
+            border-radius: 5px; /* Membuat sudut border menjadi bulat */
+            padding: 20px; /* Menambahkan padding di dalam fieldset */
+            background-color: #ffffff; /* Mengatur warna latar belakang fieldset */
+        }
+
+        legend {
+            font-weight: bold; /* Membuat teks legend menjadi tebal */
+            color: #4CAF50; /* Mengatur warna teks legend */
+        }
+
+        table {
+            width: 100%; /* Mengatur lebar tabel menjadi 100% */
+            margin-top: 10px; /* Menambahkan jarak di atas tabel */
+        }
+
+        td {
+            padding: 10px; /* Menambahkan padding di dalam sel tabel */
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="number"],
+        textarea,
+        select {
+            width: calc(100% - 22px); /* Mengatur lebar input dan textarea dengan margin */
+            padding: 10px; /* Menambahkan padding di dalam input dan textarea */
+            border: 1px solid #ccc; /* Mengatur border untuk input dan textarea */
+            border-radius: 4px; /* Membuat sudut border menjadi bulat */
+            box-sizing: border-box; /* Menghitung padding dan border dalam lebar total */
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #4CAF50; /* Mengatur warna latar belakang tombol */
+            color: white; /* Mengatur warna teks tombol */
+            border: none; /* Menghapus border default tombol */
+            padding: 10px 15px; /* Menambahkan padding di dalam tombol */
+            text-align: center; /* Menyelaraskan teks ke tengah */
+            text-decoration: none; /* Menghapus garis bawah pada teks tombol */
+            display: inline-block; /* Menampilkan tombol sebagai blok inline */
+            margin-top: 10px; /* Menambahkan jarak di atas tombol */
+            cursor: pointer; /* Mengubah kursor saat hover pada tombol */
+            border-radius: 4px; /* Membuat sudut tombol menjadi bulat */
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #45a049; /* Mengubah warna latar belakang saat hover pada tombol */
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Formulir Pendaftaran</legend>
+            <table>
+                <tr>
+                    <td>Nama Lengkap</td>
+                    <td>:</td>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <td>Tempat Lahir</td>
+                    <td>:</td>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td>:</td>
+                    <td><input type="date" required></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>:</td>
+                    <td>
+                        <input type="radio" name='jenis_kelamin' value='laki-laki' required/>Laki-laki
+                        <input type="radio" name='jenis_kelamin' value='perempuan'/>Perempuan
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alamat</td>
+                    <td>:</td>
+                    <td><textarea cols="22" rows="3" required></textarea></td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td>:</td>
+                    <td><input type="email" required></td>
+                </tr>
+                <tr>
+                    <td>No Hp</td>
+                    <td>:</td>
+                    <td><input type="number" required></td>
+                </tr>
+                <tr>
+                    <td>Kota</td>
+                    <td>:</td>
+                    <td>
+                        <select required>
+                            <option value="">*****SELECT KOTA*****</option>
+                            <option>Bogor</option>
+                            <option>Jakarta</option>
+                            <option>Bekasi</option>
+                            <option>Tangerang</option>
+                            <option>Depok</option>
+                            <option>Cikarang</option>
+                            <option>Banten</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><!-- Kosongkan baris -->
+                </tr>
+
+                <!-- Tombol Simpan dan Batal -->
+                <tr style="text-align:center;">
+                    <td colspan="3">
+                        <input type="submit" name="submit" value="Simpan"/>
+                        &nbsp;
+                        <input type="reset" name="reset" value="Batal" />
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>
