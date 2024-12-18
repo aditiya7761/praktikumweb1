@@ -1,0 +1,55 @@
+
+let wb = SpreadsheetApp.getActiveSpreadsheet();
+let ws = wb.getSheetByName("LowonganPekerjaan");
+
+function doGet(e) {
+  const sheet = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1xNlpzT5oKv_HbNUS-7DaTBEo6Ts3bLQXdculg10Oxoo/edit?gid=0#gid=0");
+  const action = e.parameter.action;
+
+  if (action === 'get') {
+    return getJobs(sheet);
+  } else if (action === 'search') {
+    return searchJob(sheet, e.parameter.query);
+  }
+}
+
+function doPost(e) {
+  const sheet = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1xNlpzT5oKv_HbNUS-7DaTBEo6Ts3bLQXdculg10Oxoo/edit?gid=0#gid=0");
+  const action = e.parameter.action;
+
+  if (action === 'add') {
+    return addJob(sheet, e.parameter.title, e.parameter.description);
+  } else if (action === 'update') {
+    return updateJob(sheet, e.parameter.row, e.parameter.title, e.parameter.description);
+  } else if (action === 'delete') {
+    return deleteJob(sheet, e.parameter.row);
+  }
+}
+
+function getJobs(sheet) {
+  const data = sheet.getDataRange().getValues();
+  return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(ContentService.MimeType.JSON);
+}
+
+function addJob(sheet, title, description) {
+  sheet.appendRow([title, description]);
+  return ContentService.createTextOutput(JSON.stringify({status: 'success', message: 'Job added'}));
+}
+
+function updateJob(sheet, row, title, description) {
+  sheet.getRange(row + 1, 1).setValue(title); // +1 karena indeks baris dimulai dari 0
+  sheet.getRange(row + 1, 2).setValue(description);
+  return ContentService.createTextOutput(JSON.stringify({status: 'success', message: 'Job updated'}));
+}
+
+function deleteJob(sheet, row) {
+  // Delete the row from the sheet
+  sheet.deleteRow(row + 1); 
+  return ContentService.createTextOutput(JSON.stringify({status: 'success', message: 'Job deleted'}));
+}
+
+function searchJob(sheet, query) {
+  const data = sheet.getDataRange().getValues();
+  const results = data.filter(row => row[0].toLowerCase().includes(query.toLowerCase()));
+  return ContentService.createTextOutput(JSON.stringify(results)).setMimeType(ContentService.MimeType.JSON);
+}
