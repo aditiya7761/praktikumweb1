@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  background: #75c2c5;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.portfolio-item {
+  transition: transform 0.3s;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background: #343a40;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
